@@ -1,6 +1,11 @@
 {
   "dependencies": {
     "express": "^4.18.1",
-    "mongoose": "^6.3.3"
+    "moment": "^2.29.3",
+    "mongoose": "^6.3.3",
+    "redis": "^4.1.0",
+    "redis-cli": "^2.1.2",
+    "shortid": "^2.2.16",
+    "valid-url": "^1.0.9"
   }
 }
