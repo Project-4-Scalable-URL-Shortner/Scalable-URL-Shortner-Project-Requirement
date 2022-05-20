@@ -4,16 +4,16 @@ const { promisify } = require("util");
 
 const validUrl = require('valid-url')
 const shortid = require('shortid');
-const client = redis.createClient()
-await client.connect()
+
+
 
 //Connect to redis=================================================
 const redisClient = redis.createClient(
-    13633,
-    "redis-13633.c81.us-east-1-2.ec2.cloud.redislabs.com",
+    15056,
+    "redis-15056.c264.ap-south-1-1.ec2.cloud.redislabs.com",
     { no_ready_check: true }
 );
-redisClient.auth("zXGz6mWeXy0mZfKALK3pV15u7seerWf5", function (err) {
+redisClient.auth("gMEt8HS341bI8ajTtNveupC0LHSkCEK7", function (err) {
     if (err) throw err;
 });
 
@@ -39,7 +39,7 @@ const urlshortner = async (req, res) => {
         if (!validUrl.isUri(baseUrl)) return res.status(400).send({ status: false, message: "Please Enter a valid url" })
         //creating short url
         let code = shortid.generate().toLowerCase()
-        let short = "http://localhost:3000/" + code
+        let short = "http://127.0.0.1:3000/" + code
         let output = {
             longUrl: baseUrl,
             shortUrl: short,
