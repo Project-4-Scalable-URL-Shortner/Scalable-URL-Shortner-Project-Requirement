@@ -24,7 +24,7 @@ app.use(
     }
     
 );
-app.use('/functionup', route);
+app.use('/', route);
 
 
 app.listen(process.env.PORT || 3000, function () { 
